@@ -27,7 +27,7 @@ while True:
 	elif opcion ==1:
 		print()
 		print("\t--- Lista con los nombres de los pokemons y su evolucion ---")
-		for pye in lista_pokemon_y_sus_evoluciones(datos):
+		for pye in lista_pokemons_y_sus_evoluciones(datos):
 			print(pye)
 
 		print()
@@ -76,6 +76,21 @@ while True:
 
 	elif opcion == 3:
 		print()
+		nom_pokemon=input("\tNombre del pokemon: ")
+		print()
+
+		if nom_pokemon not in lista_pokemons(datos):
+			print("\tError, el pokemon %s no existe."%(nom_pokemon))
+		else:
+
+			tipos=" // "
+			for t in tipos_del_pokemon(nom_pokemon,datos):
+				tipos=tipos+t+" // "
+
+			print("\t--- Los tipos del pokemon %s son:---"%(nom_pokemon))
+			print()
+			print("\t   %s"%(tipos))
+			print()
 		print()
 
 	elif opcion == 4:
