@@ -6,6 +6,21 @@ with open("pokedex.json") as fichero:
 	datos=json.load(fichero)
 
 while True:
+
+	print()
+	print("                                   ,'\                                 ")
+	print("     _.----.        ____         ,'  _\   ___    ___     ____")
+	print(" _,-'       `.     |    |  /`.   \,-'    |   \  /   |   |    \  |`.")
+	print(" \      __    \    '-.  | /   `.  ___    |    \/    |   '-.   \ |  |")
+	print("  \.    \ \   |  __  |  |/    ,','_  `.  |          | __  |    \|  |")
+	print("    \    \/   /,' _`.|      ,' / / / /   |          ,' _`.|     |  |")
+	print("     \     ,-'/  /   \    ,'   | \/ / ,`.|         /  /   \  |     |")
+	print("      \    \ |   \_/  |   `-.  \    `'  /|  |    ||   \_/  | |\    |")
+	print("       \    \ \      /       `-.`.___,-' |  |\  /| \      /  | |   |")
+	print("        \    \ `.__,'|  |`-._    `|      |__| \/ |  `.__,'|  | |   |")
+	print("         \_.-'       |__|    `-._ |              '-.|     '-.| |   |")
+	print("                                 `'                            '-._|")
+
 	print()
 	print()
 	print("\t------ MENU DE OPCIONES ------")
@@ -29,6 +44,13 @@ while True:
 		print("\t--- Lista con los nombres de los pokemons y su evolucion ---")
 		for pye in lista_pokemons_y_sus_evoluciones(datos):
 			print(pye)
+
+		seguir=input("\t¿Quieres seguir en el programa?(S/N): ")
+
+		if seguir == "S" or seguir == "s" or seguir == "SI" or seguir == "Si" or seguir == "si":
+			print(menu(datos))
+		else:
+			break
 
 		print()
 
@@ -91,6 +113,13 @@ while True:
 			print()
 			print("\t   %s"%(tipos))
 			print()
+		seguir=input("\t¿Quieres seguir en el programa?(S/N): ")
+
+		if seguir == "S" or seguir == "s" or seguir == "SI" or seguir == "Si" or seguir == "si":
+			print(menu(datos))
+		else:
+			break
+
 		print()
 
 	elif opcion == 4:
@@ -108,10 +137,37 @@ while True:
 				pkms=pkms+t+" // "
 			print()
 			print("\t   %s"%(pkms))
+
+		print()
+		seguir=input("\t¿Quieres seguir en el programa?(S/N): ")
+
+		if seguir == "S" or seguir == "s" or seguir == "SI" or seguir == "Si" or seguir == "si":
+			print(menu(datos))
+		else:
+			break
+
 		print()
 
 	elif opcion == 5:
 		print()
+
+		nom_pokemon=input("\tNombre del pokemon: ")
+		print()
+
+		if nom_pokemon not in lista_pokemons(datos):
+			print("\tError, el pokemon %s no existe."%(nom_pokemon))
+		else:
+			for info in info_completa_pokemon(nom_pokemon,datos):
+				print(info)
+
+		print()
+		seguir=input("\t¿Quieres seguir en el programa?(S/N): ")
+
+		if seguir == "S" or seguir == "s" or seguir == "SI" or seguir == "Si" or seguir == "si":
+			print(menu(datos))
+		else:
+			break
+
 		print()
 
 	else:
