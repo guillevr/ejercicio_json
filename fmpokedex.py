@@ -111,15 +111,40 @@ def tipos_del_pokemon(nom_pokemon,datos):
 
     for pokemon in datos["pokemon"]:
         npokemon=pokemon["name"]
-        for tipos in pokemon["type"]:
+        for tipo in pokemon["type"]:
             if npokemon==nom_pokemon:
-                tipos_del_pokemon.append(tipos)
+                tipos_del_pokemon.append(tipo)
 
     return tipos_del_pokemon
 
 
 ## 4. **Buscar informacion relacionada:** Mostrar el nombre de los pokemon cuyo tipo sea el introducido por teclado.
 
+####### Para comprobar si el tipo de pokemon existe
 
+def tipos_dpokemon(datos):
+
+    tipos=[]
+
+    for pokemon in datos["pokemon"]:
+        for tiposdpokemon in pokemon["type"]:
+            if tiposdpokemon not in tipos:
+                tipos.append(tiposdpokemon)
+
+    return tipos
+
+#############
+
+def pokemons_que_coinciden_con_el_tipo(ntipo_pokemon,datos):
+
+    pokemons=[]
+
+    for pokemon in datos["pokemon"]:
+        npokemon=pokemon["name"]
+        for tipo in pokemon["type"]:
+            if tipo==ntipo_pokemon:
+                pokemons.append(npokemon)
+
+    return pokemons
 
 ## 5. **Ejercicio Libre:** Pide el nombre de un pokemon y muestra su numero en la pokedex, su nombre, su tipo, su peso, su tiempo de expansion y si tiene caramelo o no.
